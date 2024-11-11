@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اعتبارسنجی کد ملی</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .validation-result {
+            transition: all 0.3s ease;
+            display: none;
+        }
+    </style>
+  
+</head>
+<body class="py-5 d-flex align-items-center justify-content-center vh-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">اعتبارسنجی کد ملی</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="nationalIdForm" novalidate>
+                            <div class="mb-4">
+                                <label for="nationalId" class="form-label">کد ملی را وارد کنید:</label>
+                                <input type="text" 
+                                       class="form-control form-control-lg text-center" 
+                                       id="nationalId" 
+                                       dir="ltr"
+                                       maxlength="10" 
+                                       pattern="\d{10}"
+                                       required>
+                                <div class="invalid-feedback">
+                                    لطفاً یک کد ملی ۱۰ رقمی وارد کنید
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 btn-lg">بررسی اعتبار</button>
+                        </form>
+                        
+                        <div class="alert mt-4 validation-result" role="alert"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="validateIranianNationalId.js">
+      
+    </script>
+</body>
+</html>
